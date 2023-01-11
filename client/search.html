@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEARCH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <form ng-submit="getData()">
+        <div class="mb-3 mt-4">
+            <label for="delete" class="form-label">Select the Department</label>
+            <select class="form-select form-select-lg" ng-model="status" id="" required ng-change="getData()">
+                <option selected disabled value="">Select one</option>
+                <option value="Testing">Testing</option>
+                <option value="Deployment">Deployment</option>
+                <option value="Advertising">Advertising</option>
+                <option value="CustomerSatisfaction">Customer Satisfaction</option>
+            </select>
+        </div>
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Search" class="btn btn-info" />
+        </div>
+        </form>
+        <section id="tableSection" class="container mt-5">
+            <table class="table table-striped">
+                <thead>
+                    <tr class="bg-primary">
+                        <th scope="col">Emp Id</th>
+                        <th scope="col">Emp Name</th>
+                        <th scope="col">Emp Designation</th>
+                        <th scope="col">Emp Department</th>
+                        <th scope="col">Emp Salary</th>
+                        <th scope="col">Emp Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="data in datas">
+                        <td scope="row">{{data.Emp_ID}}</td>
+                        <td>{{data.Emp_Name}}</td>
+                        <td>{{data.Emp_Designation}}</td>
+                        <td>{{data.Emp_Department}}</td>
+                        <td>{{data.Emp_Salary}}</td>
+                        <td>{{data.Emp_Location}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+
+</html>
